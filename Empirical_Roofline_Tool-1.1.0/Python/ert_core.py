@@ -19,12 +19,6 @@ class ert_core:
     self.metadata["ERT_VERSION"] = self.ert_version
 
     hostname = socket.gethostname()
-    try:
-      new_hostname = socket.gethostbyaddr(hostname)
-    except socket.herror:
-      new_hostname = hostname
-
-    hostname = new_hostname
 
     hostname = os.getenv("NERSC_HOST",hostname)
 
